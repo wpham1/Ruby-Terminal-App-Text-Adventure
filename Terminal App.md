@@ -1,3 +1,5 @@
+
+
 Readme file
 
 github repo
@@ -120,3 +122,59 @@ artii ascii font
 colorize - gives text color
 
 progress bar - for hp
+
+----------------------
+
+| R4   | Provide a link to your source control repository |
+| ---- | ------------------------------------------------ |
+|      | https://github.com/wpham1/terminalapp            |
+
+| R5   | **Develop** a statement of **purpose** and **scope** for your application. It must include: - **describe** at a high level what the application will do - **identify** the problem it will solve and **explain** why you are developing it - **identify** the target audience - **explain** how a member of the target audience will use it | 300 - 500 words |
+| ---- | ------------------------------------------------------------ | --------------- |
+
+~~**What will the application do?**~~
+
+The application will take user inputs to create an interactive story with a customised character that the player takes control of to buy items from a fantasy merchant and battle with monsters.
+
+~~**Identify the problem it will solve:**~~
+
+The application is made for entertainment purposes, so it will hold the players' attention and hopefully give pleasure and delight. As the story of the application is dictated by the users' input, the interaction aspect will provide amusement and fun, the management of gold and fantastical elements also serves to alleviate boredom. The application will reduce stress and provide escapism from reality.
+
+**Explain why you are developing it:**
+
+I am developing this application because I am interested in game development and this is a good way to combine my interests and test my programming abilities.
+
+**Identify the target audience:**
+
+The target audience would be for an audience looking for an experience 
+
+**~~How will a member of the target audience use it? User story~~**
+
+A member of the target audience will use the application for recreational purposes, but I would also like my application to inspire others to create something in Ruby too.
+
+"As Rory, I want to be entertained, so I can feel relaxed after being at work all day."
+
+"As Kim, I want to see what can be achieved with Ruby, so I can be inspired to create something fun with Ruby"
+
+The user will create their own character by using the terminal to input their character name, answer questions to develop the character, spend gold to equip their character with weapons and select combat prompts in battle to defeat monsters.
+
+| R6   | **Develop** a list of features that will be included in the application. It must include: - at least THREE **features** - **describe** each feature  **Note:** **Ensure** that your features above allow you to demonstrate your understanding of the following language elements and concepts: - use of variables and the concept of variable scope - loops and conditional control structures - error handling  **Consult with your educator** to check your features are sufficient . | 300 words (approx. 100 words per feature) |
+| ---- | ------------------------------------------------------------ | ----------------------------------------- |
+
+Describe each feature:
+
+Users will be able to create their own character.
+
+As the user will be creating their own character, I will be utilising instance variables to store that information in a class that I can access at future dates.
+
+| R7   | **Develop** an **outline** of the user interaction and experience for the application. Your outline must include: - how the user will find out how to interact with / use each feature - how the user will interact with / use each feature - how errors will be handled by the application and displayed to the user |
+| ---- | ------------------------------------------------------------ |
+
+| R8   | **Develop** a diagram which describes the control flow of your application. Your diagram must: - show the workflow/logic and/or integration of the features in your application for each feature. - utilise a recognised format or set of conventions for a control flow diagram, such as UML. |
+| ---- | ------------------------------------------------------------ |
+
+| R9   | **Develop** an implementation plan which: - **outlines** how each feature will be implemented and a checklist of tasks for each feature - prioritise the implementation of different features, or checklist items within a feature - provide a deadline, duration or other time indicator for each feature or checklist/checklist-item  Utilise a suitable project management platform to track this implementation plan  > Your checklists for each feature should have at least 5 items. |
+| ---- | ------------------------------------------------------------ |
+
+| R10  | **Design** help documentation which includes a set of instructions which accurately **describe** how to use and install the application.  You must include: - steps to install the application - any dependencies required by the application to operate - any system/hardware requirements |
+| ---- | ------------------------------------------------------------ |
