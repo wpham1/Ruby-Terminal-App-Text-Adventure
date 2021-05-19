@@ -41,6 +41,10 @@ Overview: Players create their own character in a fantasy setting and must defea
 
 title screen
 
+*shows total number of monsters defeated*
+
+*shows total number of runs completed*
+
 menu: new character, *load character (last name used, money)*, quit
 
 **Player creates a character (name, style)**
@@ -116,6 +120,8 @@ bet money
 ___________________________________
 
 gems
+
+json - file handling
 
 artii ascii font
 
