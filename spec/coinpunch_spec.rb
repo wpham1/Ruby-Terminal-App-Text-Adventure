@@ -1,7 +1,12 @@
 require "character"
+require "hub"
+require "ascii_art"
+require "mainmenu"
 
-describe "user_name" do
-    context "given user input for a name" do
-        it "returns their name" do
-            expect(Character.user_name("").to be_a(String)
-end
+
+describe Hub do
+    describe "#location" do
+        it "returns the names of two locations: shop and forest" do
+            hub = Hub.new
+            expect(hub.)
+        end

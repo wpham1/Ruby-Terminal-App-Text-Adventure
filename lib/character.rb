@@ -49,13 +49,13 @@ class Character
         space
         if @character_trait == 1
             @strength += 2
-            puts "Strong as ten regular men. You feel stronger than usual. #{@strength}"
+            puts "Strong as ten regular men. You feel stronger than Danny DeVito.".light_white.on_light_blue
         elsif @character_trait == 2
             @dexterity += 2
-            puts "You are tempted to lick the blade of your dagger. Your feet feel nimble."
+            puts "You are tempted to lick the blade of your dagger. Your feet are nimble and pictures are 5gp.".white.on_red
         elsif @character_trait == 3
             @hit_points += 10
-            puts "Doctors fear how many apples you eat. You're healthier than ever."
+            puts "Doctors fear how many apples you eat. Your glutes are maximum.".light_blue.on_white
         end
     end
 
@@ -65,7 +65,6 @@ class Character
         puts "You have #{@hit_points} hit points."
         puts "You have #{@strength} strength and #{@dexterity} dexterity."
         puts "You have #{gold} gold in your coin pouch."
-        puts "#{@character_trait}"
         puts ""
     end
 end
