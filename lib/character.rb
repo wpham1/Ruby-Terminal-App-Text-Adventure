@@ -1,6 +1,11 @@
 #create character and stats
 
 require "tty-prompt"
+require "artii"
+require "colorize"
+require_relative "ascii_art.rb"
+# require_relative "hub.rb"
+
 $prompt = TTY::Prompt.new
 
 def space
@@ -28,16 +33,20 @@ class Character
     end
     #gets user input for character name
     def user_name
-        puts "what is your name, hero?"
-        user_input = gets.chomp
-        if user_input.empty?
-            sleep(1)
+        loop do 
             puts "Please type in your name, hero."
-            user_name
-        else 
-            # break
+            user_input = gets.chomp
+            if user_input.empty?
+                puts "Heroes need a name!"
+            elsif user_input =~ (/\d/)
+                puts "Heroes don't have numbers in their name!"
+            elsif user_input =~ (/\W/)
+                puts "Heroes don't use symbols in their name!"
+            else 
+                @name = user_input
+                break
+            end
         end
-        @name = user_input
     end
 
     def character_power
@@ -54,7 +63,7 @@ class Character
             @dexterity += 2
             puts "You are tempted to lick the blade of your dagger. Your feet are nimble and pictures are 5gp.".white.on_red
         elsif @character_trait == 3
-            @hit_points += 10
+            @hit_points += 15
             puts "Doctors fear how many apples you eat. Your glutes are maximum.".light_blue.on_white
         end
     end
@@ -64,9 +73,10 @@ class Character
         puts "Your name is #{@name}."
         puts "You have #{@hit_points} hit points."
         puts "You have #{@strength} strength and #{@dexterity} dexterity."
-        puts "You have #{gold} gold in your coin pouch."
+        puts "You have #{@gold} gold in your coin pouch."
         puts ""
     end
+
 end
 
-Character.new(@name).to_s
+# Character.new(@name)

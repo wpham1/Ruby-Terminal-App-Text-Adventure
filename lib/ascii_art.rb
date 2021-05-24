@@ -1,5 +1,5 @@
 class Ascii_art
-    def fire_place
+    def ascii_book
         puts "          __...--~~~~~-._   _.-~~~~~--...__
         //   terminal    `V'               \\ 
        //   coin          |                 \\ 
