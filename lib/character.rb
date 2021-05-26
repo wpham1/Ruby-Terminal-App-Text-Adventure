@@ -25,9 +25,8 @@ class Character
         @hit_points = 20
         @strength = 5
         @dexterity = 5
-        @gold = 100
+        $gold = 100
         @character_trait = character_trait
-
         user_name
         character_power
     end
@@ -68,15 +67,21 @@ class Character
         end
     end
 
+
     #prints user name an stats
     def to_s
         puts "Your name is #{@name}."
         puts "You have #{@hit_points} hit points."
         puts "You have #{@strength} strength and #{@dexterity} dexterity."
-        puts "You have #{@gold} gold in your coin pouch."
+        puts "You have #{$gold} gold in your coin pouch."
         puts ""
+    end
+
+    def attack
+    #attack?
     end
 
 end
 
-# Character.new(@name)
+
+#  player_character = Character.new("").to_s

@@ -9,4 +9,3 @@ class Ascii_art
                         `---`"
     end
 end
-

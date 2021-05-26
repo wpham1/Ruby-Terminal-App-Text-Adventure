@@ -1,11 +1,9 @@
-require './lib/hub'  #=> add this
+require 'hub'  #=> add this
+require 'character'
 
-
-describe Hub do
-    describe "#location" do
-        it "returns the names of two locations: shop and forest" do
-            hub = Hub.new
-            expect(hub.location.place)).to eql("Shop")
-        end
+Rspec.describe Shop do
+    it 'creates a student class' do
+      shop = Shop.new
+      expect(shop).to be_kind_of(Shop)
     end
-end
+  end
