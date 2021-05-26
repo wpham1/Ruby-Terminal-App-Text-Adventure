@@ -3,7 +3,7 @@ require "tty-prompt"
 require "artii"
 require "colorize"
 
-require_relative "ascii_art.rb"
+# require_relative "ascii_art.rb"
 
 class Monster
 
@@ -26,9 +26,11 @@ class Monster
     end
 
     def to_s
-        puts "the monster is called #{@name}"
+        puts "The monster you encounter is called #{@name}"
         puts @strength
     end
+
+
 end
 
-monster = Monster.new("").to_s
+# monster = Monster.new("").to_s

@@ -1,4 +1,5 @@
 class Ascii_art
+    #prints book image
     def ascii_book
         puts "          __...--~~~~~-._   _.-~~~~~--...__
         //   terminal    `V'               \\ 
@@ -8,6 +9,7 @@ class Ascii_art
     ====================\\|//====================
                         `---`"
     end
+    #prints town image
     def ascii_town
         puts %{　ｏ ﾟ　　 i　 | 　　 ◯'⌒ヽ、 　 　 　 ﾟ｡　ｏ　　 　*
             ･、. 　　/　ﾉ 　　 （　　　　）　　　　　　　｡　　　　　　　 　ｿｰ
@@ -25,6 +27,7 @@ class Ascii_art
             :::/ο　i　　　　　　　    　| ||　\"￣ﾞﾞ\ﾟ | |ﾟ　ﾟ　ﾟ　ﾟ　ﾟ　°°ﾟ　ﾟ　ﾟ　°|°
             ..i　　　| 　 　Ｏ 　      　 ０|　|o ＠:::| ｡０ﾆﾆ二ニ|ミ田田彡|ﾆﾆ二ニ|　　　｡　　　○}
     end
+    #prints merchant image
     def ascii_merchant
         puts %q(            　　
             
@@ -39,7 +42,7 @@ class Ascii_art
 
         )
     end
-
+    #prints monster image
     def ascii_monster
     puts %q(　　　　　　　
                           Λ＿Λ
@@ -54,5 +57,3 @@ class Ascii_art
     end
 
 end
-
-Ascii_art.new.ascii_town

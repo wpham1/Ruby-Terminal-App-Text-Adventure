@@ -8,6 +8,7 @@ require_relative "ascii_art.rb"
 
 $prompt = TTY::Prompt.new
 
+# prints neat empty line
 def space
     puts ""
 end
@@ -49,7 +50,7 @@ class Character
                 end
             end
     end
-
+    # asks what class user wants to be
     def character_power
         @character_trait = $prompt.select("What Power do you seek, #{@name.upcase}?", cycle: true) do |power|
             power.choice "The Power of the warrior. Invincible courage. A sword of terrible destruction.", 1

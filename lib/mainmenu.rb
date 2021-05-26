@@ -6,6 +6,7 @@ require "ruby-progressbar"
 require_relative "ascii_art.rb"
 require_relative "character"
 require_relative "hub"
+require_relative "monster"
 
 
 prompt = TTY::Prompt.new
@@ -23,7 +24,6 @@ class Intro
         # progressbar = ProgressBar.create(format: "%t: Loading... |\e[0;34m%B\e[0m|")
         # 100.times { progressbar.increment; sleep 0.1 }
         Hub.new   
-
     end
 
     def logo

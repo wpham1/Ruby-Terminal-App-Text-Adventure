@@ -4,7 +4,8 @@ require "colorize"
 require "ruby-progressbar"
 
 require_relative "ascii_art.rb"
-require "./character.rb"
+require_relative "character.rb"
+require_relative "combat"
 
 $prompt = TTY::Prompt.new
 
@@ -18,10 +19,14 @@ class Hub
     attr_accessor :gold
     attr_accessor :character_trait
     attr_accessor :inventory
+    attr_accessor :surequit
 
     def initialize
         @hub
+        @surequit = surequit
         location
+        @test = TTY::Prompt.new
+
     end
     def location
         Ascii_art.new.ascii_town
@@ -29,14 +34,21 @@ class Hub
         hub = $prompt.select("Where would you like to go?") do |place|
             place.choice "Enter Shop (buy items)", 1
             place.choice "Enter Forest (fight a monster)", 2
+            place.choice "Quit Game", 3
         end
         if hub == 1
             system "clear"
             Shop.new
         elsif  hub == 2
-            puts "you wander into the forest and encounter a monster"
-        else
-            puts "you no"
+            puts "You wander into the forest knowing full well you would encounter a monster"
+            puts "..."
+            Combat.new
+        elsif hub == 3
+            begin
+                exit
+                rescue SystemExit
+                p "See you next time adventurer!"
+            end
         end
      end
 end
@@ -131,7 +143,6 @@ class Shop
                     $inventory << "Winged Boots"
                     $dexterity += 5   
                     checkout
-
                  end     
         #selection 5
         elsif @menu_select == 5
