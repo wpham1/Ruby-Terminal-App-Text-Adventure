@@ -2,6 +2,7 @@
 require "tty-prompt"
 require "artii"
 require "colorize"
+
 require_relative "ascii_art.rb"
 
 class Monster

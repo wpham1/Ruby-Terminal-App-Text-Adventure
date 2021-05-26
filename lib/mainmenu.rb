@@ -1,6 +1,8 @@
 require "tty-prompt"
 require "artii"
 require "colorize"
+require "ruby-progressbar"
+
 require_relative "ascii_art.rb"
 require_relative "character"
 require_relative "hub"
@@ -18,6 +20,8 @@ class Intro
         system "clear"
         Ascii_art.new.ascii_book
         @player = Character.new("").to_s
+        # progressbar = ProgressBar.create(format: "%t: Loading... |\e[0;34m%B\e[0m|")
+        # 100.times { progressbar.increment; sleep 0.1 }
         Hub.new   
 
     end
