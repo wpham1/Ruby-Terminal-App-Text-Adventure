@@ -19,6 +19,7 @@ class Character
     attr_accessor :dexterity
     attr_accessor :gold
     attr_accessor :character_trait
+    attr_accessor :inventory
 
     def initialize(name)
         @name = name
@@ -27,6 +28,7 @@ class Character
         @dexterity = 5
         $gold = 100
         @character_trait = character_trait
+        $inventory = []
         user_name
         character_power
     end
@@ -35,17 +37,17 @@ class Character
         loop do 
             puts "Please type in your name, hero."
             user_input = gets.chomp
-            if user_input.empty?
-                puts "Heroes need a name!"
-            elsif user_input =~ (/\d/)
-                puts "Heroes don't have numbers in their name!"
-            elsif user_input =~ (/\W/)
-                puts "Heroes don't use symbols in their name!"
-            else 
-                @name = user_input
-                break
+                if user_input.empty?
+                    puts "Heroes need a name!"
+                elsif user_input =~ (/\d/)
+                    puts "Heroes don't have numbers in their name!"
+                elsif user_input =~ (/\W/)
+                    puts "Heroes don't use symbols in their name!"
+                else 
+                    @name = user_input
+                    break
+                end
             end
-        end
     end
 
     def character_power
@@ -83,5 +85,4 @@ class Character
 
 end
 
-
-#  player_character = Character.new("").to_s
+  player_character = Character.new("").to_s
