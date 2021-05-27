@@ -202,13 +202,13 @@ class Combat
         hit_chance = rand(1..20) + $strength
         if hit_chance >= $monster_dexterity
             $monster_hit_points -= $strength
+            sleep(1)
             puts $monster_hit_points
             puts "You successfully hit the monster for #{$strength} damage."
-            sleep(1)
             fight_selection
         elsif hit_chance < $monster_dexterity
-            puts "You missed your attack"
             sleep(1)
+            puts "You missed your attack"
             fight_selection
         end
     end

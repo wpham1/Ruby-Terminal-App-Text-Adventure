@@ -37,15 +37,15 @@ class Game
         system "clear"
         ascii3 = Artii::Base.new :font => 'cosmic'
         puts ascii3.asciify('G AME OVER').red
-        $prompt.select("Play again?") do |gover|
+        game_really_over = $prompt.select("Play again?") do |gover|
             gover.choice name: "Yes",  value: 1
             gover.choice name: "No", value: 2
         end
-        if $prompt == 1
-            puts "In the next one."
+        if game_really_over == 1
+            puts "See you in the next one."
             system "clear"
             Game.new
-        elsif $prompt == 2
+        elsif $game_really_over == 2
             begin
                 exit
                 rescue SystemExit

@@ -36,15 +36,22 @@ class Character
     end
     #gets user input for character name
     def user_name
+        error_check = 0
         loop do 
             puts "Please type in your name, hero."
             user_input = gets.chomp
-                if user_input.empty?
+                if error_check == 5
+                    @name = "Hero"
+                    break
+                elsif user_input.empty?
+                    error_check += 1
                     puts "Heroes need a name!"
                 elsif user_input =~ (/\d/)
+                    error_check += 1
                     puts "Heroes don't have numbers in their name!"
                 elsif user_input =~ (/\W/)
                     puts "Heroes don't use symbols in their name!"
+                    error_check += 1
                 else 
                     @name = user_input
                     break
