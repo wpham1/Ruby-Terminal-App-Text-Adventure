@@ -59,3 +59,5 @@ class Ascii_art
     end
 
 end
+
+puts rand(1..20)

@@ -162,8 +162,13 @@ class Shop
 end
 
 class Combat
+    attr_accessor :hit_points
+    attr_accessor :strength
+    attr_accessor :dexterity
+    attr_accessor :monster_dexterity
     def initialize
         @fight_select
+        Monster.new("").to_s
         Ascii_art.new.ascii_monster
         enemy_announcement
         display_monster_stats
@@ -187,12 +192,26 @@ class Combat
             fight.choice name: "Dodge", value: 2
         end
             if @fight_select == 1
-                puts "you hit him"
+                attack
             elsif @fight_select == 2
                 puts "you dodge"
+                @hit_points - 200
             end
-        
+        end
+    def attack
+        hit_chance = rand(1..20) + $strength
+        if hit_chance >= $monster_dexterity
+            $monster_hit_points -= $strength
+            puts $monster_hit_points
+            puts "You successfully hit the monster for #{$strength} damage."
+            fight_selection
+        elsif hit_chance < $monster_dexterity
+            puts "You missed your attack"
+            fight_selection
+        end
     end
+
+    
 end
 
 
