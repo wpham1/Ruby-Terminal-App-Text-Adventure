@@ -1,3 +1,5 @@
+require "colorize"
+
 class Ascii_art
     #prints book image
     def ascii_book
@@ -25,7 +27,7 @@ class Ascii_art
             　　/ 　 /　。 　 　 　 　 　,'　ﾒ /..|iﾛiﾛ|..`、 　 Ｏ 　 ￣￣￣　ｏ　　　　`､　　　　　｡　　＊
             　./ 　 /　　　　○ ｏ 　　 i_/__/::::ニニ:::::`､___＿＿＿＿＿＿＿＿＿＿`。　　ｏ
             :::/ο　i　　　　　　　    　| ||　\"￣ﾞﾞ\ﾟ | |ﾟ　ﾟ　ﾟ　ﾟ　ﾟ　°°ﾟ　ﾟ　ﾟ　°|°
-            ..i　　　| 　 　Ｏ 　      　 ０|　|o ＠:::| ｡０ﾆﾆ二ニ|ミ田田彡|ﾆﾆ二ニ|　　　｡　　　○}
+            ..i　　　| 　 　Ｏ 　      　 ０|　|o ＠:::| ｡０ﾆﾆ二ニ|ミ田田彡|ﾆﾆ二ニ|　　　｡　　　○}.light_blue
     end
     #prints merchant image
     def ascii_merchant
@@ -40,7 +42,7 @@ class Ascii_art
             　　　　| |:: |::::　　|
             :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-        )
+        ).green
     end
     #prints monster image
     def ascii_monster
@@ -53,7 +55,7 @@ class Ascii_art
         　　　　　 //`ｎ　＿-　　- ＿,ﾍ,ノ　≡=-
         　 　 　 〈/　//　　　￣￣　　ヽ＼ 
         　　　 　 　 〈/　　　　 　 　 ＼>
-        )
+        ).yellow
     end
 
 end

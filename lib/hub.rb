@@ -5,7 +5,7 @@ require "ruby-progressbar"
 
 require_relative "ascii_art.rb"
 require_relative "character.rb"
-require_relative "combat"
+
 
 $prompt = TTY::Prompt.new
 
@@ -40,6 +40,9 @@ class Hub
             system "clear"
             Shop.new
         elsif  hub == 2
+            progressbar = ProgressBar.create(format: "%t: Entering forest... |\e[0;32m%B\e[0m|")
+            100.times { progressbar.increment; sleep 0.01 }
+            system "clear"
             puts "You wander into the forest knowing full well you would encounter a monster"
             puts "..."
             Combat.new
@@ -65,7 +68,7 @@ class Shop
     #displays tty-prompt menu list
     def menu_list
         space
-    @menu_select = $prompt.select("The Merchant nods. What did you want to purchase?") do |menu|
+    @menu_select = $prompt.select("The Merchant nods. What did you want to purchase?", cycle: true) do |menu|
         menu.enum "."
         menu.choice name: "Sword of Destruction; 30 gold", value: 1
         menu.choice name: "Shield of Protection; 20 gold", value: 2
@@ -163,5 +166,24 @@ class Shop
         puts "You have that item already"
     end
 end
+
+class Combat
+    def initialize
+        Ascii_art.new.ascii_monster
+        enemy_announcement
+        display_monster_stats
+        display_player_stats
+    end
+    def enemy_announcement
+    puts "An enemy ambushes you through the trees! Engage in combat!!"
+    end
+    def display_monster_stats
+        puts "jims stats"
+    end
+    def display_player_stats
+        puts "your stats mate"
+    end
+end
+
 
 # Hub.new

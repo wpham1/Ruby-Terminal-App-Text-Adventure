@@ -12,25 +12,26 @@ class Monster
     attr_accessor :strength
     attr_accessor :dexterity
 
-    def initialize(name)
-    monstername
-    @hit_points = 10 + rand(0..5)
-    @strength = rand(1..5)
-    @dexterity = rand(1..6)
+    def initialize(monster_name)
+    monster_name
+    @montser_hit_points = 10 + rand(0..5)
+    $monster_strength = rand(1..5)
+    $monster_dexterity = rand(1..6)
     end
 
-    def monstername
+    def monster_name
     list_of_monster_names = ["gary", "jim", "goblin", "dragon"]
-    @name = list_of_monster_names.sample
-    puts @name
-    end
+    @montser_name = list_of_monster_names.sample
+     end
 
     def to_s
-        puts "The monster you encounter is called #{@name}"
-        puts @strength
+        puts "The monster you encounter is called #{@monster_name}"
+        puts $monster_strength
     end
 
-
+    def alive?
+        @monster_hit_points > 0
+      end
 end
 
 # monster = Monster.new("").to_s

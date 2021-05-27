@@ -9,9 +9,6 @@ require_relative "hub"
 require_relative "monster"
 
 
-class Combat
-    def initialize
-    monster = Monster.new("").to_s
-    end
+module Combat
 
 end

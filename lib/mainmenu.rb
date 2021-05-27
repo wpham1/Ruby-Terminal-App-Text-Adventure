@@ -12,7 +12,7 @@ require_relative "monster"
 prompt = TTY::Prompt.new
 
 
-class Intro
+class Game
     
     def initialize
         system "clear"
@@ -32,8 +32,10 @@ class Intro
     puts ascii.asciify('                t e r m i n a l ').light_red
     puts ascii2.asciify('             c o i n').yellow
     end
+
+    
 end
 
-Intro.new
+Game.new
 
 

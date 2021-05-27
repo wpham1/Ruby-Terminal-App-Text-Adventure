@@ -4,7 +4,7 @@ require "tty-prompt"
 require "artii"
 require "colorize"
 require_relative "ascii_art.rb"
-# require_relative "hub.rb"
+
 
 $prompt = TTY::Prompt.new
 
@@ -21,6 +21,7 @@ class Character
     attr_accessor :gold
     attr_accessor :character_trait
     attr_accessor :inventory
+
 
     def initialize(name)
         @name = name
@@ -83,7 +84,10 @@ class Character
     def attack
     #attack?
     end
-
+    def alive?
+        @hit_points > 0
+    end
 end
 
-#   player_character = Character.new("").to_s
+
+# player_character = Character.new("").to_s
