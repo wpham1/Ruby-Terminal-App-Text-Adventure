@@ -167,6 +167,7 @@ class Combat
         enemy_announcement
         display_monster_stats
         display_player_stats
+        fight_selection
     end
     def enemy_announcement
     puts "An enemy ambushes you through the trees! Engage in combat!!"
@@ -178,7 +179,18 @@ class Combat
         puts "your stats mate"
     end
     def fight_selection
+        $prompt = TTY::Prompt.new
+        @fight_select = $prompt.select("What do you want to do?", cycle: true) do |fight|
+            fight.enum "."
+            fight.choice name: "Attack!!", value: 1
+            fight.choice name: "Dodge", value: 2
 
+            if @fight_select == 1
+                puts "you hit him"
+            elsif @fight_select == 2
+                puts "you dodge"
+            end
+        end
     end
 end
 
