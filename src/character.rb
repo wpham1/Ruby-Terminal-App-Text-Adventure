@@ -25,7 +25,7 @@ class Character
 
     def initialize(name)
         @name = name
-        @hit_points = 20
+        $hit_points = 20
         $strength = 5
         $dexterity = 5
         $gold = 100
@@ -73,28 +73,19 @@ class Character
             $dexterity += 2
             puts "You are tempted to lick the blade of your dagger. Your feet are nimble and pictures are 5gp.".white.on_red
         elsif @character_trait == 3
-            @hit_points += 15
+            $hit_points += 15
             puts "Doctors fear how many apples you eat. Your glutes are maximum.".light_blue.on_white
         end
     end
 
-
     #prints user name an stats
     def to_s
         puts "Your name is #{@name}.".white.on_red
-        puts "You have #{@hit_points} hit points.".green
+        puts "You have #{$hit_points} hit points.".green
         puts "You have #{$strength} strength and #{$dexterity} dexterity.".cyan
         puts "You have #{$gold} gold in your coin pouch.".yellow
         puts ""
     end
 
-    def attack
-    #attack?
-    end
-    def alive?
-        @hit_points > 0
-    end
 end
 
-
-# player_character = Character.new("").to_s

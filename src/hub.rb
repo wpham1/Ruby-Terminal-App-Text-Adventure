@@ -3,6 +3,7 @@ require "artii"
 require "colorize"
 require "ruby-progressbar"
 
+# require_relative "mainmenu.rb"
 require_relative "ascii_art.rb"
 require_relative "character.rb"
 
@@ -166,9 +167,11 @@ class Combat
     attr_accessor :strength
     attr_accessor :dexterity
     attr_accessor :monster_dexterity
+    attr_accessor :monster_strength
+    attr_accessor :monster_hit_points
     def initialize
         @fight_select
-        Monster.new("").to_s
+        Monster.new("")
         Ascii_art.new.ascii_monster
         enemy_announcement
         display_monster_stats
@@ -179,23 +182,23 @@ class Combat
     puts "An enemy ambushes you through the trees! Engage in combat!!"
     end
     def display_monster_stats
-        puts "jims stats"
+        puts "Monster HP: #{$monster_hit_points}".yellow
     end
     def display_player_stats
-        puts "your stats mate"
+        puts "Your HP: #{$hit_points}".green
     end
     def fight_selection
         $prompt = TTY::Prompt.new
         @fight_select = $prompt.select("What do you want to do?", cycle: true) do |fight|
             fight.enum "."
             fight.choice name: "Attack!!", value: 1
-            fight.choice name: "Dodge", value: 2
+            fight.choice name: "Dodge", value: 2, disabled: ("|Sorry, does nothing atm|").light_red
         end
             if @fight_select == 1
                 attack
             elsif @fight_select == 2
                 puts "you dodge"
-                @hit_points - 200
+                $hit_points - 200
             end
         end
     def attack
@@ -203,17 +206,69 @@ class Combat
         if hit_chance >= $monster_dexterity
             $monster_hit_points -= $strength
             sleep(1)
-            puts $monster_hit_points
-            puts "You successfully hit the monster for #{$strength} damage."
-            fight_selection
+            monster_alive?
+                if monster_alive? == false
+                    system "clear"
+                    sleep(1)
+                    puts "Victory!".yellow
+                    puts "You gain #{$gold += rand(5..20)} gold!".yellow
+                    Hub.new
+                elsif monster_alive? == true
+                puts "The monster has #{$monster_hit_points} hit points remaining.".blue.on_white
+                puts "You successfully hit the monster for #{$strength} damage.".yellow
+                monster_attack
+                fight_selection
+                end
         elsif hit_chance < $monster_dexterity
             sleep(1)
-            puts "You missed your attack"
+            puts "You missed your attack".cyan
+            monster_attack
             fight_selection
         end
     end
-
-    
+    def alive?
+        $hit_points > 0
+    end
+    def monster_alive?
+        $monster_hit_points > 0
+    end
+    def monster_attack
+        puts "The monster swings its appendages at you."
+        monster_hit_chance = rand(1..20) + $monster_strength
+        if monster_hit_chance >= $dexterity
+            $hit_points -= $monster_strength
+            sleep(1)
+            alive?
+            if alive? == false
+                puts "YOU DIED".red
+                game_over
+            elsif alive? == true
+                puts "It managed to hit you!!"
+                puts "You have #{$hit_points} hit points remaining.".white.on_green
+                puts "The monster hit you for #{$monster_strength} damage.".red
+            end
+        end
+    end
+    def game_over
+        system "clear"
+        ascii3 = Artii::Base.new :font => 'cosmic'
+        puts ascii3.asciify('G AME OVER').red
+        game_really_over = $prompt.select("Play again?") do |gover|
+            gover.choice name: "Yes",  value: 1
+            gover.choice name: "No", value: 2
+        end
+        if game_really_over == 1
+            puts "See you in the next one."
+            system "clear"
+            Game.new
+        elsif $game_really_over == 2
+            begin
+                exit
+                rescue SystemExit
+                p "See you next time adventurer!"
+            end
+        end
+    end
 end
 
 

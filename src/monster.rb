@@ -24,11 +24,6 @@ class Monster
     @monster_name = list_of_monster_names.sample
      end
 
-    def to_s
-        puts "The monster you encounter is called #{@monster_name}"
-        puts $monster_strength
-    end
-
     def alive?
         $monster_hit_points > 0
       end
