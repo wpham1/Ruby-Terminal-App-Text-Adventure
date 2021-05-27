@@ -204,9 +204,11 @@ class Combat
             $monster_hit_points -= $strength
             puts $monster_hit_points
             puts "You successfully hit the monster for #{$strength} damage."
+            sleep(1)
             fight_selection
         elsif hit_chance < $monster_dexterity
             puts "You missed your attack"
+            sleep(1)
             fight_selection
         end
     end

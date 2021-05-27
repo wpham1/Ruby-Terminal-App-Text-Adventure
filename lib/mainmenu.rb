@@ -33,9 +33,27 @@ class Game
     puts ascii2.asciify('             c o i n').yellow
     end
 
-    
-end
-
+    def game_over
+        system "clear"
+        ascii3 = Artii::Base.new :font => 'cosmic'
+        puts ascii3.asciify('G AME OVER').red
+        $prompt.select("Play again?") do |gover|
+            gover.choice name: "Yes",  value: 1
+            gover.choice name: "No", value: 2
+        end
+        if $prompt == 1
+            puts "In the next one."
+            system "clear"
+            Game.new
+        elsif $prompt == 2
+            begin
+                exit
+                rescue SystemExit
+                p "See you next time adventurer!"
+            end
+        end
+    end
+ end
 Game.new
 
 

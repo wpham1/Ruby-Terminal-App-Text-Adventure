@@ -7,14 +7,14 @@ require "colorize"
 
 class Monster
 
-    attr_accessor :name
+    attr_accessor :monster_name
     attr_accessor :monster_hit_points
     attr_accessor :monster_strength
     attr_accessor :monster_dexterity
 
     def initialize(monster_name)
     monster_name
-    $monster_hit_points = 10 + rand(0..5)
+    $monster_hit_points = 30 + rand(0..5)
     $monster_strength = rand(1..5)
     $monster_dexterity = 10 + rand(1..6)
     end

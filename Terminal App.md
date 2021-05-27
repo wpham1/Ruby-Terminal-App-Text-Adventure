@@ -131,32 +131,21 @@ progress bar - for hp
 
 ----------------------
 
-| R4   | Provide a link to your source control repository |
-| ---- | ------------------------------------------------ |
-|      | https://github.com/wpham1/terminalapp            |
+## Link to Source Control Repository
 
-| R5   | **Develop** a statement of **purpose** and **scope** for your application. It must include: - **describe** at a high level what the application will do - **identify** the problem it will solve and **explain** why you are developing it - **identify** the target audience - **explain** how a member of the target audience will use it | 300 - 500 words |
-| ---- | ------------------------------------------------------------ | --------------- |
+https://github.com/wpham1/terminalapp
 
-~~**What will the application do?**~~
+## Statement of Purpose
 
-The application will take user inputs to create an interactive story with a customised character that the player takes control of to buy items from a fantasy merchant and battle with monsters.
-
-~~**Identify the problem it will solve:**~~
+The application will take user inputs to create an interactive story with a customised character that the player takes control of to buy items from a fantasy merchant and battle with monsters. The scope of this application is quite big as it requires multiple facets to interact with each other, I will be breaking down and working on small bits of code first before connecting them together.
 
 The application is made for entertainment purposes, so it will hold the players' attention and hopefully give pleasure and delight. As the story of the application is dictated by the users' input, the interaction aspect will provide amusement and fun, the management of gold and fantastical elements also serves to alleviate boredom. The application will reduce stress and provide escapism from reality.
 
-**Explain why you are developing it:**
-
 I am developing this application because I am interested in game development and this is a good way to combine my interests and test my programming abilities.
 
-**Identify the target audience:**
+The target audience would be for an audience looking for an entertaining experience and looking to destress and relax. A member of the target audience will use the application for recreational purposes, but I would also like my application to inspire others to create something in Ruby too.
 
-The target audience would be for an audience looking for an experience 
-
-**~~How will a member of the target audience use it? User story~~**
-
-A member of the target audience will use the application for recreational purposes, but I would also like my application to inspire others to create something in Ruby too.
+Here are some User Stories that I have thought about before proceeding with my code.
 
 "As Rory, I want to be entertained, so I can feel relaxed after being at work all day."
 
@@ -167,11 +156,21 @@ The user will create their own character by using the terminal to input their ch
 | R6   | **Develop** a list of features that will be included in the application. It must include: - at least THREE **features** - **describe** each feature  **Note:** **Ensure** that your features above allow you to demonstrate your understanding of the following language elements and concepts: - use of variables and the concept of variable scope - loops and conditional control structures - error handling  **Consult with your educator** to check your features are sufficient . | 300 words (approx. 100 words per feature) |
 | ---- | ------------------------------------------------------------ | ----------------------------------------- |
 
-Describe each feature:
+## List of Features
+
+### Character Creation
 
 Users will be able to create their own character.
 
 As the user will be creating their own character, I will be utilising instance variables to store that information in a class that I can access at future dates.
+
+When the user inputs their name I have incorporated a loop so that whenever they fail to enter something besides alphabetical characters it runs the loop again until they are successful.
+
+After their name has been made, the user will then choose an option out of three questions that will determine how strong and fast their character will be.
+
+
+
+
 
 | R7   | **Develop** an **outline** of the user interaction and experience for the application. Your outline must include: - how the user will find out how to interact with / use each feature - how the user will interact with / use each feature - how errors will be handled by the application and displayed to the user |
 | ---- | ------------------------------------------------------------ |
