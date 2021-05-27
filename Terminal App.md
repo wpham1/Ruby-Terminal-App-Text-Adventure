@@ -168,7 +168,7 @@ When the user inputs their name I have incorporated a loop so that whenever they
 
 After their name has been made, the user will then choose an option out of three questions that will determine how strong and fast their character will be.
 
-
+![](https://github.com/wpham1/terminalapp/blob/master/docs/Character%20creation.png?raw=true)
 
 
 
