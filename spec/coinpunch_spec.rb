@@ -1,6 +1,3 @@
-# require 'hub'  #=> add this
-# require 'character'
-
 RSpec.describe "an empty array for items" do
   let(:inventory) {[]}
   it "has no items" do
