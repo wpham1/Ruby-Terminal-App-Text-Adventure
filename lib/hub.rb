@@ -163,6 +163,7 @@ end
 
 class Combat
     def initialize
+        @fight_select
         Ascii_art.new.ascii_monster
         enemy_announcement
         display_monster_stats
@@ -184,13 +185,13 @@ class Combat
             fight.enum "."
             fight.choice name: "Attack!!", value: 1
             fight.choice name: "Dodge", value: 2
-
+        end
             if @fight_select == 1
                 puts "you hit him"
             elsif @fight_select == 2
                 puts "you dodge"
             end
-        end
+        
     end
 end
 
