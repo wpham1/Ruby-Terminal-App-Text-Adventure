@@ -82,13 +82,11 @@ class Shop
                 system "clear"
                 got_already
                 checkout
-            elsif $gold == 0
+            elsif $gold == 0 || $gold < 30
+                system "clear"
                 puts "When you open your coin purse dust blows into your face."
-                menu_list
-            elsif $gold < 30
                 puts "You're too broke chump"
-                puts $gold
-                menu_list
+                checkout
             else 
                 $gold -= 30
                 $inventory << "Sword"   
@@ -99,13 +97,11 @@ class Shop
             if $inventory.include?("Shield")
             got_already
             checkout
-            elsif $gold == 0
+            elsif $gold == 0 || $gold < 20
+                system "clear"
                 puts "A moth flies out of your coin pouch."
-                menu_list
-            elsif $gold < 20
                 puts "You need more gold for that."
-                puts $gold
-                menu_list
+                checkout
             else 
                 $gold -= 20
                 $inventory << "Shield"   
@@ -116,15 +112,13 @@ class Shop
             if $inventory.include?("Stick")
                 got_already
                 checkout
-             elsif $gold == 0
-                puts "A spider crawls out of your coin pouch."
-                menu_list
-            elsif $gold < 20
+             elsif $gold == 0 || $gold < 10
+                system "clear"
                 puts "You're embarrassed because you can't afford a stick"
-                puts $gold
-                menu_list
+                puts "A spider crawls out of your coin pouch."
+                checkout
             else 
-                $gold -= 20
+                $gold -= 10
                 $inventory << "Stick"
                 $strength += 100   
                 checkout
@@ -138,9 +132,9 @@ class Shop
                     menu_list
                 elsif $gold < 50
                     system "clear"
+                    puts "Not enough gold."
                     puts "Guess you'll have to stick with your land boots."
-                    puts $gold
-                    menu_list
+                    checkout
                 else 
                     $gold -= 50
                     $inventory << "Winged Boots"
@@ -182,6 +176,9 @@ class Combat
     end
     def display_player_stats
         puts "your stats mate"
+    end
+    def fight_selection
+
     end
 end
 

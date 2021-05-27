@@ -3,13 +3,13 @@ require "colorize"
 class Ascii_art
     #prints book image
     def ascii_book
-        puts "          __...--~~~~~-._   _.-~~~~~--...__
+        puts %(          __...--~~~~~-._   _.-~~~~~--...__
         //   terminal    `V'               \\ 
        //   coin          |                 \\ 
       //__...--~~~~~~-._  |  _.-~~~~~~--...__\\ 
      // __.....----~~~~._\ | /_.~~~~----.....__\\
     ====================\\|//====================
-                        `---`"
+                        `---`").cyan
     end
     #prints town image
     def ascii_town
